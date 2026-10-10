@@ -54,7 +54,7 @@ In the repository root, the project is organized as follows:
 
 `run.sh` provides the low-level build and runtime utilities, including Docker image build.
 
-`run_exp.sh` is the unified entry script for Exp1 (Section 6.2 of Paper) and Exp2 (Section 6.3 of Paper) experiment execution.
+`run_exp.sh` is the unified entry script for Exp1 (Section 7.2 of Paper) and Exp2 (Section 7.3 of Paper) experiment execution.
 
 ### 1.3 Experiment Workloads
 
