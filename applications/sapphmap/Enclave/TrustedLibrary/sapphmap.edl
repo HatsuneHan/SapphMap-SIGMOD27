@@ -1,0 +1,31 @@
+enclave {
+  trusted {
+    public void ecall_sapphmap_test(void);
+  };
+
+  untrusted {
+    void ocall_FAIL();
+    void ocall_print_string([in, string] const char *str);
+    uint64_t ocall_measure_time();
+    uint8_t* ocall_InitServer(uint64_t sizeOfT, uint64_t N_);
+    void ocall_DeleteServer();
+    void ocall_Read_Batch([in, count=chunkNum] uint64_t* offsets, [in, count=chunkNum] uint64_t* sizes, [out, count=totalSize] uint8_t* tmp, uint64_t chunkNum, uint64_t totalSize);
+    void ocall_Read(uint64_t pos, uint64_t length, [out, count=length] uint8_t* page);
+    void ocall_Write_Batch([in, count=chunkNum] uint64_t* offsets, [in, count=chunkNum] uint64_t* sizes, [in, count=totalSize] uint8_t* tmp, uint64_t chunkNum, uint64_t totalSize);
+    void ocall_Write(uint64_t pos, uint64_t length, [in, count=length] const uint8_t* page);
+    /* Result-file helpers for test_kv_stores_correctness */
+    void ocall_result_file_open([in, string] const char* path);
+    void ocall_result_file_write([in, size=len] const uint8_t* buf, uint64_t len);
+    void ocall_result_file_close();
+    int  ocall_result_files_equal([in, string] const char* f1,
+                                  [in, string] const char* f2,
+                                  [in, string] const char* f3,
+                                  [in, string] const char* f4);
+    /* Sequential file reading for experiment workloads */
+    void ocall_exp_file_open([in, string] const char* path);
+    int64_t ocall_exp_file_read_line([out, count=buf_size] char* buf, uint64_t buf_size);
+    void ocall_exp_file_close();
+    /* Read up to line_count newline-terminated lines into buf (at most max_len bytes). */
+    int64_t ocall_exp_file_read_bulk(uint64_t line_count, uint64_t max_len, [out, count=max_len] char* buf);
+  };
+};

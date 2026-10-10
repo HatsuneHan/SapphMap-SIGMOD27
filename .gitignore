@@ -1,0 +1,75 @@
+# -----------------------------------------------------------------------------
+# Generic ignore rules only (no project-path-specific pruning).
+# -----------------------------------------------------------------------------
+
+# Logs / text outputs
+*.log
+*.txt
+log/
+logs/
+
+# Data / cache / temp
+data/
+dataset/
+datasets/
+tmp/
+temp/
+
+# Ignore dependency contents but keep the directory footprint
+dependency/
+**/dependency/
+!benchmark/dependency/
+benchmark/dependency/*
+!benchmark/dependency/.gitkeep
+.cache/
+.diskio/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+# Build / intermediate artifacts
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.dylib
+*.dll
+*.lai
+*.la
+*.a
+*.lib
+*.exe
+*.out
+*.app
+*.bin
+*.elf
+**/generator
+**/generator.exe
+build/
+dist/
+codebuild/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# SGX generated files / local signing outputs
+*_u.c
+*_u.h
+*_t.c
+*_t.h
+.config_*
+*.pem
+
+# Editor / perf
+.vscode/
+perf.data*
+
+IBMObjectStoreTrace*
+
+# Symlinked benchmark data
+benchmark/Exp1/scalability/YCSB_*
