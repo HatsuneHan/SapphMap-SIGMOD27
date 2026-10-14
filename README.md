@@ -47,7 +47,8 @@ In the repository root, the project is organized as follows:
 │   │       └── experiment.hpp
 │   └── ...
 ├── run.sh
-└── run_exp.sh
+├── run_exp.sh
+└── sapphmap-fullversion.pdf
 ```
 
 ### 1.2 Scripts
@@ -106,6 +107,10 @@ applications/sapphmap/Enclave/TrustedLibrary/sapphmap_test.cpp
 #### 1.4.4 `DOSearch/`
 
 This directory contains the core code implementations of the project.
+
+### 1.5 Full Version of the Paper
+
+[sapphmap-fullversion.pdf](sapphmap-fullversion.pdf) is the full version of the paper "SapphMap: A Differentially Oblivious Map for Enclaves". The proofs are provided in the appendix.
 
 ## 2 Dataset Generation
 
